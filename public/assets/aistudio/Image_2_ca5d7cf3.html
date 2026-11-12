@@ -1,0 +1,946 @@
+<!DOCTYPE html><html class="h-full" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"primary":"#3525cd","surface-container-lowest":"#ffffff","error-container":"#ffdad6","surface-bright":"#faf8ff","outline-variant":"#c7c4d8","surface-variant":"#dae2fd","on-error":"#ffffff","error":"#ba1a1a","on-primary":"#ffffff","surface-container":"#eaedff","tertiary-fixed":"#cce5ff","secondary-container":"#c7c3fe","tertiary-fixed-dim":"#93ccff","tertiary":"#004c76","on-surface-variant":"#464555","on-surface":"#131b2e","surface-container-low":"#f2f3ff","on-tertiary-fixed-variant":"#004b73","on-secondary-fixed":"#181445","secondary-fixed":"#e3dfff","on-primary-fixed":"#0f0069","on-secondary-fixed-variant":"#444173","secondary":"#5b598c","primary-container":"#4f46e5","tertiary-container":"#00659a","on-tertiary-container":"#bedfff","primary-fixed-dim":"#c3c0ff","surface-tint":"#4d44e3","on-primary-container":"#dad7ff","on-error-container":"#93000a","surface-dim":"#d2d9f4","surface-container-highest":"#dae2fd","on-tertiary":"#ffffff","on-background":"#131b2e","on-secondary":"#ffffff","on-tertiary-fixed":"#001d31","inverse-surface":"#283044","primary-fixed":"#e2dfff","inverse-primary":"#c3c0ff","secondary-fixed-dim":"#c4c1fb","background":"#faf8ff","surface":"#faf8ff","inverse-on-surface":"#eef0ff","on-primary-fixed-variant":"#3323cc","on-secondary-container":"#514f81","outline":"#777587","surface-container-high":"#e2e7ff"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-lg":"1rem","gutter":"1rem","margin":"1.5rem","space-sm":"0.5rem","space-xs":"0.25rem","space-xl":"1.5rem","space-md":"0.75rem"},"fontFamily":{"caption":["Inter"],"headline-sm":["Inter"],"label-compact":["Inter"],"code-mono":["JetBrains Mono"],"body-default":["Inter"],"headline-xl":["Inter"],"metric-display":["Inter"],"headline-lg":["Inter"],"body-dense":["Inter"],"body-dense-medium":["Inter"],"headline-md":["Inter"]},"fontSize":{"caption":["12px",{"lineHeight":"16px","fontWeight":"400"}],"headline-sm":["14px",{"lineHeight":"20px","fontWeight":"600"}],"label-compact":["11px",{"lineHeight":"14px","letterSpacing":"0.03em","fontWeight":"600"}],"code-mono":["12px",{"lineHeight":"16px","fontWeight":"400"}],"body-default":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-xl":["24px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"600"}],"metric-display":["24px",{"lineHeight":"28px","letterSpacing":"-0.03em","fontWeight":"700"}],"headline-lg":["18px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-dense":["13px",{"lineHeight":"18px","fontWeight":"400"}],"body-dense-medium":["13px",{"lineHeight":"18px","fontWeight":"500"}],"headline-md":["16px",{"lineHeight":"22px","letterSpacing":"-0.01em","fontWeight":"600"}]}}}};</script></head><body class="bg-background font-body-default text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col min-h-0"><div class="px-space-md py-space-sm flex items-center justify-between bg-surface-container-lowest"><div class="flex items-center gap-space-sm"><img alt="ITMS Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1W5rqfLc6DDuV-E8mb_yecomKChs2Qtn66emzsov0eOJ1d2hMHVODMjHgExVetuskRhau6jaDNELnZxvmzjGqKG5o_H_etBBwhpCDFpVHGqdBdETYpQJvmPr8-AHaLIx_VaiAuMuoFDFGth8SSZSsMNBs4gTU_t_pKq0ulvi3LJqmK-TVTpKEvVdczYgfhF3xnENsjeEN2fAS3Q6k5XCSh5ZvWmKCU9sC-25jBg9HVytbJ7V2JFKUVf79Y"><div class="flex flex-col"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-on-surface leading-none">ITMS</span><span class="font-label-compact text-label-compact px-space-xs py-0.5 rounded-lg bg-surface-container text-on-surface-variant font-semibold leading-none">v2.4 Enterprise</span></div><span class="font-caption text-caption text-on-surface-variant truncate max-w-[128px] mt-0.5">Apex Garments IT Ops</span></div></div><button class="p-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded-lg transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">first_page</span></button></div><div class="overflow-y-auto px-space-sm py-space-sm space-y-space-md"><div class="space-y-space-xs"><div class="px-space-sm py-space-xs font-label-compact text-label-compact text-on-surface-variant uppercase tracking-wider">Main</div><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary font-body-dense-medium rounded-lg"><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-surface-variant font-body-dense text-body-dense hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span>Dashboard</span></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-surface-variant font-body-dense text-body-dense hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="employees" href="#"><span>Employees</span></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-surface-variant font-body-dense text-body-dense hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="it-assets" href="#"><span>IT Assets</span></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-surface-variant font-body-dense text-body-dense hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="support-tickets" href="#"><span>Support Tickets</span><span class="px-space-xs py-0.5 rounded-lg bg-surface-container text-on-surface-variant font-code-mono text-label-compact font-medium">18</span></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-surface-variant font-body-dense text-body-dense hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="tasks" href="#"><span>Tasks</span><span class="px-space-xs py-0.5 rounded-lg bg-surface-container text-on-surface-variant font-code-mono text-label-compact font-medium">5</span></a></nav></div><div class="space-y-space-xs"><div class="px-space-sm py-space-xs font-label-compact text-label-compact text-on-surface-variant uppercase tracking-wider">Organization</div><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary font-body-dense-medium rounded-lg"><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant font-body-dense text-body-dense hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="departments" href="#"><span>Departments</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant font-body-dense text-body-dense hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="locations" href="#"><span>Locations</span></a></nav></div><div class="space-y-space-xs"><div class="px-space-sm py-space-xs font-label-compact text-label-compact text-on-surface-variant uppercase tracking-wider">Administration</div><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary font-body-dense-medium rounded-lg"><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant font-body-dense text-body-dense hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="reports-and-analytics" href="#"><span>Reports &amp; Analytics</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant font-body-dense text-body-dense hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="user-management" href="#"><span>User Management</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant font-body-dense text-body-dense hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="system-settings" href="#"><span>System Settings</span></a></nav></div></div></div><div class="p-space-sm bg-surface-container-low flex flex-col gap-space-sm"><div class="flex items-center justify-between px-space-xs"><div class="flex items-center gap-space-xs"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span></span><span class="font-label-compact text-label-compact text-on-surface">All Systems Operational</span></div><button class="p-0.5 text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded-lg transition-colors" title="Quick Server Ping" type="button"><span class="material-symbols-outlined text-[14px]">network_ping</span></button></div><a class="flex items-center justify-center gap-space-xs py-space-xs text-on-surface-variant hover:text-on-surface font-caption text-caption rounded-lg transition-colors bg-surface-container-lowest" data-path="documentation" href="#"><span>Help &amp; Docs</span></a></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-14 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md"><nav class="flex items-center gap-space-xs font-body-dense text-body-dense text-on-surface-variant"><span class="text-on-surface-variant font-body-dense text-body-dense">IT Operations</span><span class="material-symbols-outlined text-[14px] text-outline-variant">chevron_right</span><span class="text-on-surface-variant font-body-dense text-body-dense">Service Desk</span><span class="material-symbols-outlined text-[14px] text-outline-variant">chevron_right</span><span class="text-on-surface font-body-dense-medium text-body-dense-medium">Support Tickets</span></nav><div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-1 rounded-lg text-on-surface font-body-dense text-body-dense cursor-pointer hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[16px] text-on-surface-variant">corporate_fare</span><span class="font-body-dense-medium text-body-dense-medium">All Facilities (Apex Garments)</span><span class="material-symbols-outlined text-[16px] text-on-surface-variant">arrow_drop_down</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm bg-surface-container-low px-space-sm py-1.5 rounded-lg w-72 text-on-surface-variant focus-within:ring-1 focus-within:ring-primary focus-within:bg-surface-container-lowest transition-all"><span class="material-symbols-outlined text-[16px]">search</span><input class="bg-transparent border-0 outline-none w-full font-body-dense text-body-dense placeholder:text-outline text-on-surface" placeholder="Search tickets, serials, employees..." type="text"><kbd class="font-code-mono text-[10px] bg-surface-container-lowest px-1 rounded text-on-surface-variant uppercase shadow-sm">⌘K</kbd></div><div class="flex items-center gap-space-xs"><div class="flex items-center gap-1 px-space-xs py-1 rounded-lg hover:bg-surface-container transition-colors cursor-pointer text-on-surface-variant hover:text-on-surface" title="Network Latency: 14ms"><span class="material-symbols-outlined text-[16px]">wifi</span><span class="font-code-mono text-label-compact text-on-surface-variant">14ms</span></div><button class="relative p-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded-lg transition-colors" title="Notifications" type="button"><span class="material-symbols-outlined text-[18px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-error"></span></button><button class="p-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded-lg transition-colors" title="Help &amp; Documentation" type="button"><span class="material-symbols-outlined text-[18px]">help</span></button></div><div class="flex items-center gap-space-sm pl-space-xs cursor-pointer group"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe-kUzMmRiZlfB0dWXt0He3QcWmvYobfJGI_yhUhXnSv56DEnkwjZlrnk1axTkesHbOcsSIRHrGdkY8oezx0l2FA5ARAHeV_jB7gnIBCGIsTtn3j69ZglqQnhY4yNOQDLhmRnN-CjYWNQOcPQ-1VVYF1ia_gj7aiEI5ARG6DYa1aC8G-087bsK6LgjoVyqp9GfbMkhpb0WKhxRAVmj-Qlfrne5lUvPngaOUMSiJVkWdx2IVk3N8OPp"><div class="flex flex-col text-left"><span class="font-body-dense-medium text-body-dense-medium text-on-surface leading-tight">Tariq Rahman</span><span class="font-label-compact text-label-compact text-on-surface-variant leading-none">IT Ops Lead / Super Admin</span></div><span class="material-symbols-outlined text-[16px] text-on-surface-variant group-hover:text-on-surface transition-colors">expand_more</span></div></div></header><main class="relative pt-14 w-full px-space-lg pb-space-xl bg-background min-h-screen"><div class="flex flex-col w-full">
+<!-- Script to update shell active navigation & breadcrumb context -->
+<script>
+    (function() {
+      // Sync sidebar active highlight for Organization > Locations
+      const navLinks = document.querySelectorAll('aside nav a');
+      navLinks.forEach(link => {
+        const path = link.getAttribute('data-path');
+        if (path === 'locations') {
+          link.classList.remove('text-on-surface-variant', 'hover:bg-surface-container-high', 'hover:text-on-surface');
+          link.classList.add('bg-primary-container', 'text-on-primary', 'font-body-dense-medium', 'rounded-lg');
+        } else {
+          link.classList.remove('bg-primary-container', 'text-on-primary');
+          link.classList.add('text-on-surface-variant');
+        }
+      });
+      // Sync shell breadcrumbs
+      const breadcrumbContainer = document.querySelector('header nav');
+      if (breadcrumbContainer) {
+        breadcrumbContainer.innerHTML = `
+          <span class="text-on-surface-variant font-body-dense text-body-dense">IT Operations</span>
+          <span class="material-symbols-outlined text-[14px] text-outline-variant">chevron_right</span>
+          <span class="text-on-surface-variant font-body-dense text-body-dense">Organization</span>
+          <span class="material-symbols-outlined text-[14px] text-outline-variant">chevron_right</span>
+          <span class="text-on-surface font-body-dense-medium text-body-dense-medium">Locations</span>
+        `;
+      }
+    })();
+  </script>
+<!-- Page Header Sub-bar & Primary Actions -->
+<section class="flex flex-col md:flex-row md:items-center justify-between gap-space-md mb-space-lg">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-sm">
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">Location &amp; Facility Management</h1>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high font-code-mono text-label-compact text-primary font-semibold">4 SITES LIVE</span>
+</div>
+<p class="font-body-dense text-body-dense text-on-surface-variant max-w-3xl">
+        Monitor facility network health, deployed IT hardware, server room infrastructure, and local IT technicians across Apex Garments campuses.
+      </p>
+</div>
+<!-- Primary Action Controls -->
+<div class="flex items-center gap-space-sm self-start md:self-auto flex-shrink-0">
+<button class="inline-flex items-center gap-space-xs px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-body-dense-medium text-body-dense hover:bg-surface-container shadow-sm transition-all" title="Download site audit reports in CSV format" type="button">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">file_download</span>
+<span>Export Facility Report</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-3.5 py-1.5 rounded-lg bg-primary-container text-on-primary font-body-dense-medium text-body-dense hover:bg-primary shadow-sm transition-all shadow-primary-container/20" type="button">
+<span class="material-symbols-outlined text-[16px]">add_location_alt</span>
+<span>Add Location</span>
+</button>
+</div>
+</section>
+<!-- Executive KPI Metrics Strip (4 Cards) -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md mb-space-lg">
+<!-- Card 1: Total Facilities -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between transition-all hover:shadow-md">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-compact text-label-compact uppercase tracking-wider text-on-surface-variant">Total Facilities</span>
+<div class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[16px]">domain</span>
+</div>
+</div>
+<div class="flex items-baseline gap-space-xs mb-space-xs">
+<span class="font-metric-display text-metric-display text-on-surface">4</span>
+<span class="font-body-dense text-body-dense text-on-surface-variant">Active Campuses</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 font-label-compact text-label-compact">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+          100% Operational Status
+        </span>
+<span class="font-code-mono text-label-compact text-on-surface-variant">Dhaka • Gazipur</span>
+</div>
+</div>
+<!-- Card 2: Connectivity & Network SLA -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between transition-all hover:shadow-md">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-compact text-label-compact uppercase tracking-wider text-on-surface-variant">Connectivity &amp; Uptime</span>
+<div class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[16px]">router</span>
+</div>
+</div>
+<div class="flex items-baseline gap-space-xs mb-space-xs">
+<span class="font-metric-display text-metric-display text-on-surface">99.85%</span>
+<span class="font-label-compact text-label-compact text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded">SLA Target met</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="font-caption text-caption text-on-surface-variant truncate">Edge SD-WAN • Dual Uplink</span>
+<span class="font-label-compact text-label-compact text-amber-700 flex items-center gap-1" title="1 minor ping deviation on Factory B">
+<span class="material-symbols-outlined text-[13px]">warning</span> 1 Alert
+        </span>
+</div>
+</div>
+<!-- Card 3: Cataloged Hardware Assets -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between transition-all hover:shadow-md">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-compact text-label-compact uppercase tracking-wider text-on-surface-variant">Deployed Hardware</span>
+<div class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[16px]">devices</span>
+</div>
+</div>
+<div class="flex items-baseline gap-space-xs mb-space-xs">
+<span class="font-metric-display text-metric-display text-on-surface">864</span>
+<span class="font-body-dense text-body-dense text-on-surface-variant">Cataloged Units</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs text-on-surface-variant font-caption text-caption">
+<span class="truncate">318 PC • 342 Terminals</span>
+<span class="font-code-mono text-label-compact text-primary font-medium">98.4% Tagged</span>
+</div>
+</div>
+<!-- Card 4: IT Staff Deployment -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between transition-all hover:shadow-md">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-compact text-label-compact uppercase tracking-wider text-on-surface-variant">On-Site IT Personnel</span>
+<div class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[16px]">engineering</span>
+</div>
+</div>
+<div class="flex items-baseline gap-space-xs mb-space-xs">
+<span class="font-metric-display text-metric-display text-on-surface">14</span>
+<span class="font-body-dense text-body-dense text-on-surface-variant">Field Engineers Active</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-label-compact text-label-compact">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+          2 Shift Rotations Active
+        </span>
+<span class="font-caption text-caption text-on-surface-variant">0 Open Absences</span>
+</div>
+</div>
+</section>
+<!-- Filter & Controls Toolbar -->
+<section class="bg-surface-container-lowest rounded-xl p-space-sm shadow-sm mb-space-lg flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-md">
+<!-- Segment Tabs -->
+<div class="flex items-center gap-1 overflow-x-auto pb-1 lg:pb-0" id="facility-filter-tabs">
+<button class="filter-tab px-3 py-1.5 rounded-lg bg-primary text-on-primary font-body-dense-medium text-body-dense shadow-sm whitespace-nowrap transition-colors" data-filter="all" type="button">
+        All Facilities <span class="ml-1.5 px-1.5 py-0.2 rounded-full bg-white/20 font-code-mono text-label-compact">4</span>
+</button>
+<button class="filter-tab px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low font-body-dense-medium text-body-dense whitespace-nowrap transition-colors" data-filter="manufacturing" type="button">
+        Manufacturing Plants <span class="ml-1.5 px-1.5 py-0.2 rounded-full bg-surface-container font-code-mono text-label-compact text-on-surface-variant">2</span>
+</button>
+<button class="filter-tab px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low font-body-dense-medium text-body-dense whitespace-nowrap transition-colors" data-filter="warehouse" type="button">
+        Warehouses &amp; Logistics <span class="ml-1.5 px-1.5 py-0.2 rounded-full bg-surface-container font-code-mono text-label-compact text-on-surface-variant">1</span>
+</button>
+<button class="filter-tab px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low font-body-dense-medium text-body-dense whitespace-nowrap transition-colors" data-filter="corporate" type="button">
+        Corporate &amp; Design HQ <span class="ml-1.5 px-1.5 py-0.2 rounded-full bg-surface-container font-code-mono text-label-compact text-on-surface-variant">1</span>
+</button>
+</div>
+<!-- Right Controls: Search, Status Filter, View Toggle -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Search Input -->
+<div class="relative flex-grow sm:flex-grow-0 sm:w-72">
+<span class="material-symbols-outlined absolute left-2.5 top-2 text-[16px] text-outline">search</span>
+<input class="w-full pl-8 pr-3 py-1.5 text-body-dense font-body-dense bg-surface-container-low rounded-lg outline-none text-on-surface placeholder:text-outline focus:bg-surface-container-lowest shadow-sm transition-all" id="facility-search-input" placeholder="Search code, subnet, facility..." type="text">
+</div>
+<!-- Facility Status Dropdown Selector -->
+<div class="relative">
+<select class="appearance-none bg-surface-container-low hover:bg-surface-container text-on-surface font-body-dense text-body-dense pl-3 pr-8 py-1.5 rounded-lg outline-none cursor-pointer transition-colors">
+<option>All Status: Active / Operational</option>
+<option>Critical Only</option>
+<option>Under Maintenance</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-2 pointer-events-none text-[16px] text-on-surface-variant">expand_more</span>
+</div>
+<!-- Topology / Map Quick Action Button -->
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-body-dense-medium text-body-dense transition-colors" id="topology-toggle-btn" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">hub</span>
+<span class="hidden sm:inline">Network Topology</span>
+</button>
+<!-- View Switcher -->
+<div class="flex items-center bg-surface-container-low p-0.5 rounded-lg">
+<button class="p-1 rounded bg-surface-container-lowest text-primary shadow-xs transition-colors" id="view-grid-btn" title="Grid View" type="button">
+<span class="material-symbols-outlined text-[18px]">grid_view</span>
+</button>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface transition-colors" id="view-table-btn" title="Table View" type="button">
+<span class="material-symbols-outlined text-[18px]">view_list</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Interactive Network Mesh Topology Drawer (Collapsible) -->
+<section class="hidden mb-space-lg bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all overflow-hidden" id="topology-banner">
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">hub</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Apex Enterprise SD-WAN Mesh Topology Map</h2>
+<p class="font-caption text-caption text-on-surface-variant">Live latency metrics and redundant IPsec site-to-site connectivity status.</p>
+</div>
+</div>
+<button class="p-1 rounded-lg hover:bg-surface-container text-on-surface-variant" onclick="document.getElementById('topology-banner').classList.add('hidden')" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Visual Network Topology SVG -->
+<div class="w-full bg-surface-container-low rounded-xl p-space-md overflow-x-auto">
+<div class="min-w-[680px] flex items-center justify-between relative py-6 px-8">
+<!-- SVG Connecting Lines -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none stroke-outline-variant stroke-[2] stroke-dasharray-[4]" preserveAspectRatio="none">
+<line class="text-primary/40 stroke-2" stroke="currentColor" x1="16%" x2="50%" y1="50%" y2="50%"></line>
+<line class="text-primary/40 stroke-2" stroke="currentColor" x1="50%" x2="84%" y1="50%" y2="30%"></line>
+<line class="text-primary/40 stroke-2" stroke="currentColor" x1="50%" x2="84%" y1="50%" y2="70%"></line>
+</svg>
+<!-- Node 1: Apex HQ (Core Data Center) -->
+<div class="relative z-10 flex flex-col items-center bg-surface-container-lowest p-space-sm rounded-xl shadow-md w-48 text-center">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-1.5">
+<span class="material-symbols-outlined text-[20px]">corporate_fare</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface">LOC-CORP-01</span>
+<span class="font-caption text-caption text-on-surface-variant">Apex HQ (Core DC)</span>
+<div class="mt-2 inline-flex items-center gap-1 font-code-mono text-label-compact text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span> 4ms • 1Gbps Dual
+          </div>
+</div>
+<!-- Central SD-WAN Hub Cloud -->
+<div class="relative z-10 flex flex-col items-center bg-surface-container-highest/60 backdrop-blur-md px-4 py-3 rounded-full shadow-sm text-center">
+<span class="material-symbols-outlined text-[22px] text-primary">cloud_done</span>
+<span class="font-label-compact text-label-compact text-on-surface uppercase mt-1">FortiGate SD-WAN</span>
+<span class="font-code-mono text-[10px] text-on-surface-variant">4 Tunnels Synchronized</span>
+</div>
+<!-- Node Group for Remote Sites -->
+<div class="relative z-10 flex flex-col gap-4">
+<!-- Factory A -->
+<div class="bg-surface-container-lowest p-space-sm rounded-xl shadow-md w-52 flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">precision_manufacturing</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-dense-medium text-body-dense-medium text-on-surface truncate">LOC-FCT-01 (Factory A)</span>
+<span class="font-code-mono text-label-compact text-emerald-700">12ms • 10.14.20.0/20</span>
+</div>
+</div>
+<!-- Factory B -->
+<div class="bg-surface-container-lowest p-space-sm rounded-xl shadow-md w-52 flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-amber-700 flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">local_laundry_service</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-dense-medium text-body-dense-medium text-on-surface truncate">LOC-FCT-02 (Factory B)</span>
+<span class="font-code-mono text-label-compact text-amber-700">18ms • Latency Jitter</span>
+</div>
+</div>
+<!-- Warehouse Savar -->
+<div class="bg-surface-container-lowest p-space-sm rounded-xl shadow-md w-52 flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">warehouse</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-dense-medium text-body-dense-medium text-on-surface truncate">LOC-WHSE-01 (Savar Hub)</span>
+<span class="font-code-mono text-label-compact text-emerald-700">8ms • 10.14.60.0/21</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Campus / Facility Overview Cards Grid (4 Rich Cards) -->
+<section class="grid grid-cols-1 xl:grid-cols-2 gap-space-lg mb-space-lg" id="facilities-grid-container">
+<!-- Card 1: Apex HQ & Design Studio -->
+<article class="facility-card bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all overflow-hidden flex flex-col justify-between" data-category="corporate" data-search="apex hq design studio loc-corp-01 uttara dhaka tariq rahman">
+<div>
+<!-- Card Top Bar: Identity & Status -->
+<div class="p-space-md bg-surface-container-low/50 flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-primary text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[20px]">corporate_fare</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold">Apex HQ &amp; Design Studio</h2>
+<span class="font-code-mono text-label-compact px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-medium">LOC-CORP-01</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">Corporate Headquarters &amp; CAD Pattern Studios</p>
+</div>
+</div>
+<!-- Uptime Status Badge -->
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 font-label-compact text-label-compact">
+<span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+<span>Healthy (99.98% SLA)</span>
+</div>
+</div>
+<!-- Visual Media Snapshot: Headquarters CAD & Server Area -->
+<div class="px-space-md pt-space-md">
+<div class="relative w-full h-36 rounded-lg overflow-hidden bg-surface-container group">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="High tech apparel design studio and corporate headquarters with CAD workstations, clean architectural glass partitions, modern monitors, and glowing network rack cabinets in the background with soft blue lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBe3dl8xL34e1bg820q7FVX0ej1njpDwSZu9dF4jmsi-CayBWrzQhpz-pAGKvMlsi0tSgLU3TBnkZud0U9P9no0J67iK2lA_xvy1BkBv45v_Bt_fMCDFQFLKr1UmWiNEfHJlzcNfxCN7TvZ94tnDK0vNIZqBRHGwaTilcru62EC65LGPMJFBrda7kPRLyiFnhe9PrqesfgSuXqSdWzkC3Y-olLvdEukygnk5MEhuShST80M05VgYdk7">
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent flex items-end p-space-sm">
+<div class="flex items-center justify-between w-full text-white font-caption text-caption">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">pin_drop</span> Plot 14, Sector 7, Uttara Commercial Area, Dhaka</span>
+<span class="font-code-mono bg-black/40 px-2 py-0.5 rounded backdrop-blur-sm">Ping: 4ms</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Telemetry & Subnet Network Specs -->
+<div class="p-space-md space-y-space-md">
+<!-- Infrastructure & Network Specs Strip -->
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-space-sm p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex flex-col">
+<span class="font-label-compact text-label-compact uppercase text-on-surface-variant">Subnet Allocation</span>
+<span class="font-code-mono text-body-dense text-on-surface font-semibold">10.14.0.0/18</span>
+<span class="font-caption text-caption text-on-surface-variant truncate">Dual 1Gbps Lease Line</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-compact text-label-compact uppercase text-on-surface-variant">Active Fleet</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">285 Assets</span>
+<span class="font-caption text-caption text-on-surface-variant">312 Total Staff</span>
+</div>
+<div class="flex flex-col col-span-2 sm:col-span-1">
+<span class="font-label-compact text-label-compact uppercase text-on-surface-variant">Server Room</span>
+<span class="font-headline-sm text-headline-sm text-primary">3 Server Racks</span>
+<span class="font-caption text-caption text-emerald-700">Primary On-Prem DC</span>
+</div>
+</div>
+<!-- Deployed Hardware Snapshot Tags -->
+<div>
+<span class="font-label-compact text-label-compact uppercase text-on-surface-variant block mb-1.5">Hardware Ecosystem Snapshot</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container font-caption text-caption text-on-surface">
+<span class="material-symbols-outlined text-[13px] text-primary">desktop_mac</span> High-Spec CAD Rigs
+              </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container font-caption text-caption text-on-surface">
+<span class="material-symbols-outlined text-[13px] text-primary">laptop_mac</span> Executive MacBooks
+              </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container font-caption text-caption text-on-surface">
+<span class="material-symbols-outlined text-[13px] text-primary">dns</span> Cisco Nexus Core
+              </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container font-caption text-caption text-on-surface">
+<span class="material-symbols-outlined text-[13px] text-primary">security</span> Fortinet HA Firewalls
+              </span>
+</div>
+</div>
+<!-- Personnel & Incident Row -->
+<div class="flex items-center justify-between pt-space-xs text-on-surface-variant font-caption text-caption">
+<div class="flex items-center gap-2">
+<img alt="Tariq Rahman" class="w-6 h-6 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe-kUzMmRiZlfB0dWXt0He3QcWmvYobfJGI_yhUhXnSv56DEnkwjZlrnk1axTkesHbOcsSIRHrGdkY8oezx0l2FA5ARAHeV_jB7gnIBCGIsTtn3j69ZglqQnhY4yNOQDLhmRnN-CjYWNQOcPQ-1VVYF1ia_gj7aiEI5ARG6DYa1aC8G-087bsK6LgjoVyqp9GfbMkhpb0WKhxRAVmj-Qlfrne5lUvPngaOUMSiJVkWdx2IVk3N8OPp">
+<span>Lead: <strong class="text-on-surface font-body-dense-medium text-body-dense-medium">Tariq Rahman</strong> (+4 Techs)</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface font-code-mono text-label-compact bg-surface-container px-2 py-0.5 rounded">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> 2 Tickets Open
+            </div>
+</div>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="p-space-sm bg-surface-container-low/50 flex items-center justify-between">
+<a class="font-body-dense-medium text-body-dense-medium text-primary hover:text-primary-container inline-flex items-center gap-1" href="#">
+<span>Manage Facility Assets</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+<div class="flex items-center gap-1">
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" title="SSH / Remote Terminal Access" type="button">
+<span class="material-symbols-outlined text-[16px]">terminal</span>
+</button>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" title="Facility Settings" type="button">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 2: Factory Building A — Cutting, Sewing & Finishing -->
+<article class="facility-card bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all overflow-hidden flex flex-col justify-between" data-category="manufacturing" data-search="factory building a cutting sewing finishing loc-fct-01 gazipur industrial park kabir hossain">
+<div>
+<!-- Card Top Bar: Identity & Status -->
+<div class="p-space-md bg-surface-container-low/50 flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-primary text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[20px]">precision_manufacturing</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold">Factory Building A (Sewing &amp; Cut)</h2>
+<span class="font-code-mono text-label-compact px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-medium">LOC-FCT-01</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">High-Volume Garment Manufacturing Floor</p>
+</div>
+</div>
+<!-- Uptime Status Badge -->
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 font-label-compact text-label-compact">
+<span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+<span>Operational (99.82% SLA)</span>
+</div>
+</div>
+<!-- Visual Media Snapshot: Garment Manufacturing Floor -->
+<div class="px-space-md pt-space-md">
+<div class="relative w-full h-36 rounded-lg overflow-hidden bg-surface-container group">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Expansive modern apparel manufacturing plant in Bangladesh with automated sewing stations, computerized fabric cutting lasers, industrial overhead cabling trays, and technicians operating rugged terminals." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDglSokkoAPmUTzWfozyDlwntI6cU1vD6GHb56qf_EOrvEyp7z0553wr0FYejVTCfjm8bdkTxr0ij7mxc0DLY8h3UM6RsrgN2zbwej4rpyT_Qt3R8jy3sg-0myL2VbUDx_2on_32kEZ7g2-6B62eTe3Wzoy7hNRqCV6XHZ3-2HBCIXEYU1E7bR6wPfAcgWP_IiaWJ-gTeXlS1e_-yrOG-6154sc_a_vHmCXMthZ7l2Wr-GKKLTVUOFe">
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent flex items-end p-space-sm">
+<div class="flex items-center justify-between w-full text-white font-caption text-caption">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">pin_drop</span> Apex Industrial Park, Block B, Gazipur</span>
+<span class="font-code-mono bg-black/40 px-2 py-0.5 rounded backdrop-blur-sm">Ping: 12ms</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Telemetry & Subnet Network Specs -->
+<div class="p-space-md space-y-space-md">
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-space-sm p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex flex-col">
+<span class="font-label-compact text-label-compact uppercase text-on-surface-variant">Subnet Allocation</span>
+<span class="font-code-mono text-body-dense text-on-surface font-semibold">10.14.20.0/20</span>
+<span class="font-caption text-caption text-on-surface-variant truncate">SD-WAN + Microwave</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-compact text-label-compact uppercase text-on-surface-variant">Active Fleet</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">326 Assets</span>
+<span class="font-caption text-caption text-on-surface-variant">755 Floor Staff</span>
+</div>
+<div class="flex flex-col col-span-2 sm:col-span-1">
+<span class="font-label-compact text-label-compact uppercase text-on-surface-variant">Server / Network</span>
+<span class="font-headline-sm text-headline-sm text-primary">12 IDF Cabinets</span>
+<span class="font-caption text-caption text-on-surface-variant">Fiber Ring Trunking</span>
+</div>
+</div>
+<!-- Deployed Hardware Snapshot Tags -->
+<div>
+<span class="font-label-compact text-label-compact uppercase text-on-surface-variant block mb-1.5">Hardware Ecosystem Snapshot</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container font-caption text-caption text-on-surface">
+<span class="material-symbols-outlined text-[13px] text-primary">print</span> Zebra ZT410 Barcode
+              </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container font-caption text-caption text-on-surface">
+<span class="material-symbols-outlined text-[13px] text-primary">tablet_android</span> Rugged QC Tablets
+              </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container font-caption text-caption text-on-surface">
+<span class="material-symbols-outlined text-[13px] text-primary">switch</span> Aruba PoE+ Switches
+              </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container font-caption text-caption text-on-surface">
+<span class="material-symbols-outlined text-[13px] text-primary">sensors</span> RFID Conveyor Gates
+              </span>
+</div>
+</div>
+<!-- Personnel & Incident Row -->
+<div class="flex items-center justify-between pt-space-xs text-on-surface-variant font-caption text-caption">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-secondary-container text-on-secondary-fixed flex items-center justify-center font-bold text-[10px]">KH</div>
+<span>Lead: <strong class="text-on-surface font-body-dense-medium text-body-dense-medium">Kabir Hossain</strong> (+5 Field Techs)</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface font-code-mono text-label-compact bg-surface-container px-2 py-0.5 rounded">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span> 9 Tickets (1 Critical)
+            </div>
+</div>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="p-space-sm bg-surface-container-low/50 flex items-center justify-between">
+<a class="font-body-dense-medium text-body-dense-medium text-primary hover:text-primary-container inline-flex items-center gap-1" href="#">
+<span>Manage Facility Assets</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+<div class="flex items-center gap-1">
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" title="View IDF Cabinet Thermals" type="button">
+<span class="material-symbols-outlined text-[16px]">thermostat</span>
+</button>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" title="Facility Settings" type="button">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 3: Factory Building B — Washing, Dyeing & Finishing -->
+<article class="facility-card bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all overflow-hidden flex flex-col justify-between" data-category="manufacturing" data-search="factory building b washing dyeing finishing loc-fct-02 gazipur rafiqul islam">
+<div>
+<!-- Card Top Bar: Identity & Status with Warning State -->
+<div class="p-space-md bg-surface-container-low/50 flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-amber-600 text-white flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[20px]">local_laundry_service</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold">Factory Building B (Washing &amp; Dye)</h2>
+<span class="font-code-mono text-label-compact px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-medium">LOC-FCT-02</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">Heavy Industrial &amp; Chemical Washing Facility</p>
+</div>
+</div>
+<!-- Uptime Status Badge: Warning -->
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-50 text-amber-900 font-label-compact text-label-compact">
+<span class="w-2 h-2 rounded-full bg-amber-600 animate-ping"></span>
+<span>Maintenance • VLAN 40</span>
+</div>
+</div>
+<!-- Visual Media Snapshot: Washing & Dyeing Infrastructure -->
+<div class="px-space-md pt-space-md">
+<div class="relative w-full h-36 rounded-lg overflow-hidden bg-surface-container group">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Industrial textile dyeing and garment washing facility interior with stainless steel industrial vats, moisture-resistant industrial touch terminals mounted on pillars, and technician in safety gear inspecting equipment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC710aFJqbLVsKORjt2Hu6EYECmDHCwIXcsP5YWHpgHR4XJZDL1skNRhmqrmOs0EcLT1mn8kzvxaxJetnl7sJWvcb2IaEfTwdWic53glj4xeECF7M8iq91EnDTxwEaCX4CDiW72D3tcbTZmbNXMfDAAog8EEt8sa9MzNiwjqBCSCVrrxT8VUs1CkfYRlQ7aHcEl5T4VeOfYwnHO7-0ZOu1qjvAnWPCHJryoW8tl8m07l8ANYTU_RT99">
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent flex items-end p-space-sm">
+<div class="flex items-center justify-between w-full text-white font-caption text-caption">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">pin_drop</span> Apex Industrial Park, Block C, Gazipur</span>
+<span class="font-code-mono bg-amber-900/60 text-amber-200 px-2 py-0.5 rounded backdrop-blur-sm">Ping: 18ms (Jitter)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Telemetry & Subnet Network Specs -->
+<div class="p-space-md space-y-space-md">
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-space-sm p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex flex-col">
+<span class="font-label-compact text-label-compact uppercase text-on-surface-variant">Subnet Allocation</span>
+<span class="font-code-mono text-body-dense text-on-surface font-semibold">10.14.40.0/20</span>
+<span class="font-caption text-caption text-on-surface-variant truncate">SD-WAN + 4G Backup</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-compact text-label-compact uppercase text-on-surface-variant">Active Fleet</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">189 Assets</span>
+<span class="font-caption text-caption text-on-surface-variant">215 Floor Staff</span>
+</div>
+<div class="flex flex-col col-span-2 sm:col-span-1">
+<span class="font-label-compact text-label-compact uppercase text-on-surface-variant">Environmental</span>
+<span class="font-headline-sm text-headline-sm text-amber-700">6 Sealed IDFs</span>
+<span class="font-caption text-caption text-amber-700">IP65 Moisture Proof</span>
+</div>
+</div>
+<!-- Deployed Hardware Snapshot Tags -->
+<div>
+<span class="font-label-compact text-label-compact uppercase text-on-surface-variant block mb-1.5">Hardware Ecosystem Snapshot</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container font-caption text-caption text-on-surface">
+<span class="material-symbols-outlined text-[13px] text-primary">touch_app</span> Waterproof Touch Terminals
+              </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container font-caption text-caption text-on-surface">
+<span class="material-symbols-outlined text-[13px] text-primary">science</span> Chemical Dosing IoT
+              </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container font-caption text-caption text-on-surface">
+<span class="material-symbols-outlined text-[13px] text-primary">hub</span> Brother RFID Hubs
+              </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container font-caption text-caption text-on-surface">
+<span class="material-symbols-outlined text-[13px] text-primary">dns</span> Cisco 2960-X Stacks
+              </span>
+</div>
+</div>
+<!-- Personnel & Incident Row -->
+<div class="flex items-center justify-between pt-space-xs text-on-surface-variant font-caption text-caption">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-container text-on-surface flex items-center justify-center font-bold text-[10px]">RI</div>
+<span>Lead: <strong class="text-on-surface font-body-dense-medium text-body-dense-medium">Rafiqul Islam</strong> (+3 Field Techs)</span>
+</div>
+<div class="flex items-center gap-1 text-rose-800 font-code-mono text-label-compact bg-rose-50 px-2 py-0.5 rounded">
+<span class="w-1.5 h-1.5 rounded-full bg-rose-600"></span> 12 Tickets (2 Critical)
+            </div>
+</div>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="p-space-sm bg-surface-container-low/50 flex items-center justify-between">
+<a class="font-body-dense-medium text-body-dense-medium text-primary hover:text-primary-container inline-flex items-center gap-1" href="#">
+<span>Manage Facility Assets</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+<div class="flex items-center gap-1">
+<button class="p-1 rounded text-amber-700 hover:bg-amber-100 transition-colors" title="Cutover Telemetry View" type="button">
+<span class="material-symbols-outlined text-[16px]">troubleshoot</span>
+</button>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" title="Facility Settings" type="button">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 4: Central Fabric Warehouse & Logistics Hub -->
+<article class="facility-card bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all overflow-hidden flex flex-col justify-between" data-category="warehouse" data-search="central fabric warehouse logistics hub savar dhaka loc-whse-01 farhana yeasmin">
+<div>
+<!-- Card Top Bar: Identity & Status -->
+<div class="p-space-md bg-surface-container-low/50 flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-primary text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[20px]">warehouse</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold">Central Fabric Warehouse Hub</h2>
+<span class="font-code-mono text-label-compact px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-medium">LOC-WHSE-01</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">Raw Materials, Yarn &amp; Finished Goods Logistics</p>
+</div>
+</div>
+<!-- Uptime Status Badge -->
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 font-label-compact text-label-compact">
+<span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+<span>Operational (99.91% SLA)</span>
+</div>
+</div>
+<!-- Visual Media Snapshot: Warehouse Interior -->
+<div class="px-space-md pt-space-md">
+<div class="relative w-full h-36 rounded-lg overflow-hidden bg-surface-container group">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="High-ceiling modern logistics warehouse filled with stacked textile fabric rolls, automated forklift systems, long-range overhead Wi-Fi access points, and RFID scanning portal gates at dock doors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxD34BPjzjiCn9kArs89S3BkdykLoLifW8uFFLeggak4e47WdnOwuHo_mXfZ5Dsmpo6lXs7NmUrtl7ZzKX2w43BrDTsBhBtq9IWGd_wV2VyaRmrLPrsM3Dq4e109R99Z2uawPsee21VNU3gd6laPOhJPl5xNX4dkK9xDaB2TH4Npe3hIKzHNHe1vi64YscO3ZIBWsG7YFx7if_qn6fP9OhCHBxRSI4BaDv2Inh-lDByQLL9UZli0oW">
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent flex items-end p-space-sm">
+<div class="flex items-center justify-between w-full text-white font-caption text-caption">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">pin_drop</span> Savar Transport Corridor, Dhaka</span>
+<span class="font-code-mono bg-black/40 px-2 py-0.5 rounded backdrop-blur-sm">Ping: 8ms</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Telemetry & Subnet Network Specs -->
+<div class="p-space-md space-y-space-md">
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-space-sm p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex flex-col">
+<span class="font-label-compact text-label-compact uppercase text-on-surface-variant">Subnet Allocation</span>
+<span class="font-code-mono text-body-dense text-on-surface font-semibold">10.14.60.0/21</span>
+<span class="font-caption text-caption text-on-surface-variant truncate">Wi-Fi 6 + Fiber</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-compact text-label-compact uppercase text-on-surface-variant">Active Fleet</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">64 Assets</span>
+<span class="font-caption text-caption text-on-surface-variant">145 Personnel</span>
+</div>
+<div class="flex flex-col col-span-2 sm:col-span-1">
+<span class="font-label-compact text-label-compact uppercase text-on-surface-variant">Wireless Density</span>
+<span class="font-headline-sm text-headline-sm text-primary">18 APs High-Bay</span>
+<span class="font-caption text-caption text-emerald-700">Full Roaming Coverage</span>
+</div>
+</div>
+<!-- Deployed Hardware Snapshot Tags -->
+<div>
+<span class="font-label-compact text-label-compact uppercase text-on-surface-variant block mb-1.5">Hardware Ecosystem Snapshot</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container font-caption text-caption text-on-surface">
+<span class="material-symbols-outlined text-[13px] text-primary">barcode_reader</span> Impinj Speedway RFID
+              </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container font-caption text-caption text-on-surface">
+<span class="material-symbols-outlined text-[13px] text-primary">phone_android</span> Zebra TC26 Handhelds
+              </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container font-caption text-caption text-on-surface">
+<span class="material-symbols-outlined text-[13px] text-primary">videocam</span> Hikvision 4K PTZ
+              </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container font-caption text-caption text-on-surface">
+<span class="material-symbols-outlined text-[13px] text-primary">scale</span> Industrial Barcode Scales
+              </span>
+</div>
+</div>
+<!-- Personnel & Incident Row -->
+<div class="flex items-center justify-between pt-space-xs text-on-surface-variant font-caption text-caption">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-secondary-container text-on-secondary-fixed flex items-center justify-center font-bold text-[10px]">FY</div>
+<span>Lead: <strong class="text-on-surface font-body-dense-medium text-body-dense-medium">Farhana Yeasmin</strong> (+2 Field Techs)</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface font-code-mono text-label-compact bg-surface-container px-2 py-0.5 rounded">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> 5 Tickets Open
+            </div>
+</div>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="p-space-sm bg-surface-container-low/50 flex items-center justify-between">
+<a class="font-body-dense-medium text-body-dense-medium text-primary hover:text-primary-container inline-flex items-center gap-1" href="#">
+<span>Manage Facility Assets</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+<div class="flex items-center gap-1">
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" title="RF Coverage Heatmap" type="button">
+<span class="material-symbols-outlined text-[16px]">wifi_find</span>
+</button>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" title="Facility Settings" type="button">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+</button>
+</div>
+</div>
+</article>
+</section>
+<!-- High-Density Facility Comparison Table (Alternative Table View) -->
+<section class="hidden bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden mb-space-lg" id="facility-table-view">
+<div class="p-space-md flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">All Campuses Roster &amp; Hardware Index</h2>
+<span class="font-caption text-caption text-on-surface-variant">Showing 4 of 4 active facilities</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-compact text-label-compact uppercase">
+<th class="py-2.5 px-4 font-semibold">Facility Name &amp; Code</th>
+<th class="py-2.5 px-4 font-semibold">Physical Location</th>
+<th class="py-2.5 px-4 font-semibold">Subnet &amp; Uplink</th>
+<th class="py-2.5 px-4 font-semibold">Staff / Assets</th>
+<th class="py-2.5 px-4 font-semibold">On-Site IT Lead</th>
+<th class="py-2.5 px-4 font-semibold">SLA Status</th>
+<th class="py-2.5 px-4 font-semibold text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high font-body-dense text-body-dense text-on-surface">
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">corporate_fare</span>
+<div>
+<div class="font-body-dense-medium text-body-dense-medium text-on-surface">Apex HQ &amp; Design Studio</div>
+<span class="font-code-mono text-label-compact text-on-surface-variant">LOC-CORP-01</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 text-on-surface-variant">Plot 14, Sec 7, Uttara, Dhaka</td>
+<td class="py-3 px-4 font-code-mono text-label-compact">10.14.0.0/18 <span class="text-emerald-700 block text-[10px]">Dual 1Gbps Fiber</span></td>
+<td class="py-3 px-4">312 Staff / <strong class="text-on-surface">285 Assets</strong></td>
+<td class="py-3 px-4">Tariq Rahman (+4)</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 font-label-compact text-label-compact">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> 99.98% (4ms)
+              </span>
+</td>
+<td class="py-3 px-4 text-right">
+<button class="p-1 rounded text-primary hover:bg-surface-container"><span class="material-symbols-outlined text-[16px]">visibility</span></button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">precision_manufacturing</span>
+<div>
+<div class="font-body-dense-medium text-body-dense-medium text-on-surface">Factory Building A</div>
+<span class="font-code-mono text-label-compact text-on-surface-variant">LOC-FCT-01</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 text-on-surface-variant">Apex Ind. Park, Block B, Gazipur</td>
+<td class="py-3 px-4 font-code-mono text-label-compact">10.14.20.0/20 <span class="text-emerald-700 block text-[10px]">SD-WAN + Microwave</span></td>
+<td class="py-3 px-4">755 Staff / <strong class="text-on-surface">326 Assets</strong></td>
+<td class="py-3 px-4">Kabir Hossain (+5)</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 font-label-compact text-label-compact">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> 99.82% (12ms)
+              </span>
+</td>
+<td class="py-3 px-4 text-right">
+<button class="p-1 rounded text-primary hover:bg-surface-container"><span class="material-symbols-outlined text-[16px]">visibility</span></button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-amber-700 text-[18px]">local_laundry_service</span>
+<div>
+<div class="font-body-dense-medium text-body-dense-medium text-on-surface">Factory Building B</div>
+<span class="font-code-mono text-label-compact text-on-surface-variant">LOC-FCT-02</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 text-on-surface-variant">Apex Ind. Park, Block C, Gazipur</td>
+<td class="py-3 px-4 font-code-mono text-label-compact">10.14.40.0/20 <span class="text-amber-700 block text-[10px]">SD-WAN + 4G Backup</span></td>
+<td class="py-3 px-4">215 Staff / <strong class="text-on-surface">189 Assets</strong></td>
+<td class="py-3 px-4">Rafiqul Islam (+3)</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-amber-50 text-amber-800 font-label-compact text-label-compact">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-600 animate-pulse"></span> Warning (18ms)
+              </span>
+</td>
+<td class="py-3 px-4 text-right">
+<button class="p-1 rounded text-primary hover:bg-surface-container"><span class="material-symbols-outlined text-[16px]">visibility</span></button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">warehouse</span>
+<div>
+<div class="font-body-dense-medium text-body-dense-medium text-on-surface">Central Fabric Warehouse</div>
+<span class="font-code-mono text-label-compact text-on-surface-variant">LOC-WHSE-01</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 text-on-surface-variant">Savar Transport Corridor, Dhaka</td>
+<td class="py-3 px-4 font-code-mono text-label-compact">10.14.60.0/21 <span class="text-emerald-700 block text-[10px]">Wi-Fi 6 + Fiber</span></td>
+<td class="py-3 px-4">145 Staff / <strong class="text-on-surface">64 Assets</strong></td>
+<td class="py-3 px-4">Farhana Yeasmin (+2)</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 font-label-compact text-label-compact">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> 99.91% (8ms)
+              </span>
+</td>
+<td class="py-3 px-4 text-right">
+<button class="p-1 rounded text-primary hover:bg-surface-container"><span class="material-symbols-outlined text-[16px]">visibility</span></button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Bottom Facility Infrastructure Health & IP Subnet Allocation Strip -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-md pb-space-md mb-space-md">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">lan</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Master IP Subnet &amp; Address Pool Utilization</h2>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">Supernet: 10.14.0.0/16 Enterprise master allocation • 1,840 active dynamic DHCP &amp; static leases</p>
+</div>
+<!-- Quick Metrics Summary Pills -->
+<div class="flex items-center gap-space-sm flex-wrap">
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container-low">
+<span class="font-caption text-caption text-on-surface-variant">IP Pool Capacity:</span>
+<span class="font-code-mono text-label-compact font-bold text-on-surface">62% Utilized</span>
+<div class="w-16 h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 62%;"></div>
+</div>
+</div>
+<!-- Emergency Dispatch Hotline Quick Button -->
+<a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-error-container text-on-error-container font-body-dense-medium text-body-dense hover:bg-error/20 transition-colors" href="tel:+8801700000000">
+<span class="material-symbols-outlined text-[16px] text-error">phone_in_talk</span>
+<span>Shift Supervisor Hotline</span>
+</a>
+</div>
+</div>
+<!-- Segment Subnet Bars -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Subnet 1: HQ -->
+<div class="p-space-sm rounded-lg bg-surface-container-low space-y-1.5">
+<div class="flex items-center justify-between">
+<span class="font-body-dense-medium text-body-dense-medium text-on-surface">HQ Core Subnet</span>
+<span class="font-code-mono text-label-compact text-on-surface-variant">10.14.0.0/18</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 74%;"></div>
+</div>
+<div class="flex items-center justify-between font-caption text-caption text-on-surface-variant">
+<span>74% Leased (1,210 Hosts)</span>
+<span class="text-emerald-700">Healthy</span>
+</div>
+</div>
+<!-- Subnet 2: Factory A -->
+<div class="p-space-sm rounded-lg bg-surface-container-low space-y-1.5">
+<div class="flex items-center justify-between">
+<span class="font-body-dense-medium text-body-dense-medium text-on-surface">Factory A Subnet</span>
+<span class="font-code-mono text-label-compact text-on-surface-variant">10.14.20.0/20</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 58%;"></div>
+</div>
+<div class="flex items-center justify-between font-caption text-caption text-on-surface-variant">
+<span>58% Leased (610 Hosts)</span>
+<span class="text-emerald-700">Healthy</span>
+</div>
+</div>
+<!-- Subnet 3: Factory B -->
+<div class="p-space-sm rounded-lg bg-surface-container-low space-y-1.5">
+<div class="flex items-center justify-between">
+<span class="font-body-dense-medium text-body-dense-medium text-on-surface">Factory B Subnet</span>
+<span class="font-code-mono text-label-compact text-on-surface-variant">10.14.40.0/20</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-amber-500 h-full rounded-full" style="width: 82%;"></div>
+</div>
+<div class="flex items-center justify-between font-caption text-caption text-on-surface-variant">
+<span>82% Leased (840 Hosts)</span>
+<span class="text-amber-700">VLAN Re-index</span>
+</div>
+</div>
+<!-- Subnet 4: Savar Warehouse -->
+<div class="p-space-sm rounded-lg bg-surface-container-low space-y-1.5">
+<div class="flex items-center justify-between">
+<span class="font-body-dense-medium text-body-dense-medium text-on-surface">Warehouse Subnet</span>
+<span class="font-code-mono text-label-compact text-on-surface-variant">10.14.60.0/21</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 38%;"></div>
+</div>
+<div class="flex items-center justify-between font-caption text-caption text-on-surface-variant">
+<span>38% Leased (194 Hosts)</span>
+<span class="text-emerald-700">Ample Headroom</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Controls Script -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Toggle Network Topology Drawer
+      const topologyBtn = document.getElementById('topology-toggle-btn');
+      const topologyBanner = document.getElementById('topology-banner');
+      if (topologyBtn && topologyBanner) {
+        topologyBtn.addEventListener('click', () => {
+          topologyBanner.classList.toggle('hidden');
+        });
+      }
+
+      // Switch View: Grid vs Table
+      const gridBtn = document.getElementById('view-grid-btn');
+      const tableBtn = document.getElementById('view-table-btn');
+      const gridView = document.getElementById('facilities-grid-container');
+      const tableView = document.getElementById('facility-table-view');
+
+      if (gridBtn && tableBtn && gridView && tableView) {
+        gridBtn.addEventListener('click', () => {
+          gridView.classList.remove('hidden');
+          tableView.classList.add('hidden');
+          gridBtn.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-xs');
+          gridBtn.classList.remove('text-on-surface-variant');
+          tableBtn.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-xs');
+          tableBtn.classList.add('text-on-surface-variant');
+        });
+
+        tableBtn.addEventListener('click', () => {
+          gridView.classList.add('hidden');
+          tableView.classList.remove('hidden');
+          tableBtn.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-xs');
+          tableBtn.classList.remove('text-on-surface-variant');
+          gridBtn.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-xs');
+          gridBtn.classList.add('text-on-surface-variant');
+        });
+      }
+
+      // Segment Filter Tabs
+      const tabs = document.querySelectorAll('.filter-tab');
+      const cards = document.querySelectorAll('.facility-card');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => {
+            t.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+            t.classList.add('text-on-surface-variant');
+          });
+          tab.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+          tab.classList.remove('text-on-surface-variant');
+
+          const filter = tab.getAttribute('data-filter');
+          cards.forEach(card => {
+            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // Quick Search Filter
+      const searchInput = document.getElementById('facility-search-input');
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          const query = e.target.value.toLowerCase().trim();
+          cards.forEach(card => {
+            const dataText = (card.getAttribute('data-search') || '').toLowerCase();
+            if (dataText.includes(query)) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      }
+    });
+  </script>
+</div></main></div></body></html>

@@ -1,0 +1,6 @@
+{
+  "name": "ITMS Enterprise - Location & Facility Management",
+  "description": "Mission-critical IT operations and facility management platform for Apex Garments distributed campuses, network topology, and hardware infrastructure.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
