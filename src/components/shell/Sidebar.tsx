@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 
 export type ScreenId =
@@ -5,6 +7,7 @@ export type ScreenId =
   | 'dashboard'
   | 'assets'
   | 'tickets'
+  | 'tasks'
   | 'employees'
   | 'departments'
   | 'settings'
@@ -41,9 +44,9 @@ export const Sidebar: React.FC<SidebarProps> = ({
       id: 'tickets' as ScreenId,
       label: 'Support Tickets',
       icon: 'confirmation_number',
-      badge: String(openTicketsCount || 18)
+      badge: '1'
     },
-    { id: 'dashboard' as ScreenId, label: 'Tasks', icon: 'check_circle', badge: '5' }
+    { id: 'tasks' as ScreenId, label: 'Task', icon: 'check_circle', badge: '5' }
   ];
 
   const orgNav = [

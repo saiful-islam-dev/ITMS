@@ -6,13 +6,15 @@ import {
 import { Topbar } from './components/shell/Topbar';
 import { initialFacilities } from './data/mockFacilities';
 import { mockTickets as initialMockTickets } from './data/mockTickets';
-import { Facility, SupportTicket } from './types';
+import { Facility, SupportTicket, TaskItem, TaskStatus } from './types';
+import { initialMockTasks } from './data/mockTasks';
 
 // Screens
 import { DashboardScreen } from './components/screens/DashboardScreen';
 import { LocationsScreen } from './components/screens/LocationsScreen';
 import { ITAssetsScreen } from './components/screens/ITAssetsScreen';
 import { SupportTicketsScreen } from './components/screens/SupportTicketsScreen';
+import { TasksScreen } from './components/screens/TasksScreen';
 import { EmployeesScreen } from './components/screens/EmployeesScreen';
 import { DepartmentsScreen } from './components/screens/DepartmentsScreen';
 import { SettingsScreen } from './components/screens/SettingsScreen';
@@ -26,20 +28,23 @@ import { ThermalsModal } from './components/modals/ThermalsModal';
 import { ExportReportModal } from './components/modals/ExportReportModal';
 import { CreateTicketModal } from './components/modals/CreateTicketModal';
 import { TicketDetailsModal } from './components/modals/TicketDetailsModal';
+import { CreateTaskModal } from './components/modals/CreateTaskModal';
+import { TaskDetailsModal } from './components/modals/TaskDetailsModal';
 import { AuditLogModal } from './components/modals/AuditLogModal';
 
 // Icons for emergency dialogs
 import { PhoneCall, X, ShieldCheck, Bell } from 'lucide-react';
 
 export default function App() {
-  // Navigation & Shell State - Dashboard is default as requested!
-  const [activeScreen, setActiveScreen] = useState<ScreenId>('dashboard');
+  // Navigation & Shell State - Tasks active as requested
+  const [activeScreen, setActiveScreen] = useState<ScreenId>('tasks');
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
-  // Global Facilities & Tickets State
+  // Global Facilities, Tickets & Tasks State
   const [facilities, setFacilities] = useState<Facility[]>(initialFacilities);
   const [tickets, setTickets] = useState<SupportTicket[]>(initialMockTickets);
+  const [tasks, setTasks] = useState<TaskItem[]>(initialMockTasks);
   const [selectedFacilityId, setSelectedFacilityId] = useState<string>('all');
   const [globalSearch, setGlobalSearch] = useState('');
 
@@ -48,6 +53,9 @@ export default function App() {
   const [isExportModalOpen, setIsExportModalOpen] = useState(false);
   const [isCreateTicketModalOpen, setIsCreateTicketModalOpen] = useState(false);
   const [selectedTicketForDetails, setSelectedTicketForDetails] = useState<SupportTicket | null>(null);
+  const [isCreateTaskModalOpen, setIsCreateTaskModalOpen] = useState(false);
+  const [createTaskDefaultStatus, setCreateTaskDefaultStatus] = useState<TaskStatus>('todo');
+  const [selectedTaskForDetails, setSelectedTaskForDetails] = useState<TaskItem | null>(null);
   const [isAuditTrailModalOpen, setIsAuditTrailModalOpen] = useState(false);
   const [selectedFacilityForAssets, setSelectedFacilityForAssets] = useState<Facility | null>(null);
   const [selectedFacilityForTerminal, setSelectedFacilityForTerminal] = useState<Facility | null>(null);
@@ -73,6 +81,56 @@ export default function App() {
     );
   };
 
+  // Task Handlers
+  const handleCreateTask = (newTask: TaskItem) => {
+    setTasks((prev) => [newTask, ...prev]);
+  };
+
+  const handleUpdateTaskStatus = (taskId: string, newStatus: TaskStatus) => {
+    setTasks((prev) =>
+      prev.map((t) => {
+        if (t.id === taskId) {
+          const progress = newStatus === 'done' ? 100 : newStatus === 'todo' ? 0 : t.progressPercent;
+          return { ...t, status: newStatus, progressPercent: progress };
+        }
+        return t;
+      })
+    );
+    if (selectedTaskForDetails && selectedTaskForDetails.id === taskId) {
+      setSelectedTaskForDetails((prev) => (prev ? { ...prev, status: newStatus } : null));
+    }
+  };
+
+  const handleToggleSubtask = (taskId: string, subtaskId: string) => {
+    setTasks((prev) =>
+      prev.map((t) => {
+        if (t.id === taskId && t.subtasks) {
+          const updatedSubtasks = t.subtasks.map((st) =>
+            st.id === subtaskId ? { ...st, completed: !st.completed } : st
+          );
+          const total = updatedSubtasks.length;
+          const completed = updatedSubtasks.filter((s) => s.completed).length;
+          const progress = total > 0 ? Math.round((completed / total) * 100) : t.progressPercent;
+          return { ...t, subtasks: updatedSubtasks, progressPercent: progress };
+        }
+        return t;
+      })
+    );
+    if (selectedTaskForDetails && selectedTaskForDetails.id === taskId && selectedTaskForDetails.subtasks) {
+      const updatedSubtasks = selectedTaskForDetails.subtasks.map((st) =>
+        st.id === subtaskId ? { ...st, completed: !st.completed } : st
+      );
+      const total = updatedSubtasks.length;
+      const completed = updatedSubtasks.filter((s) => s.completed).length;
+      const progress = total > 0 ? Math.round((completed / total) * 100) : selectedTaskForDetails.progressPercent;
+      setSelectedTaskForDetails({ ...selectedTaskForDetails, subtasks: updatedSubtasks, progressPercent: progress });
+    }
+  };
+
+  const handleDeleteTask = (taskId: string) => {
+    setTasks((prev) => prev.filter((t) => t.id !== taskId));
+  };
+
   // Ping all sweep handler
   const handlePingAll = () => {
     setFacilities((prev) =>
@@ -94,6 +152,8 @@ export default function App() {
         return 'IT Assets';
       case 'tickets':
         return 'Support Tickets';
+      case 'tasks':
+        return 'Task Management';
       case 'employees':
         return 'Employees';
       case 'departments':
@@ -189,6 +249,20 @@ export default function App() {
             />
           )}
 
+          {activeScreen === 'tasks' && (
+            <TasksScreen
+              tasks={tasks}
+              facilities={facilities}
+              onOpenCreateTask={(defaultStatus) => {
+                setCreateTaskDefaultStatus(defaultStatus || 'todo');
+                setIsCreateTaskModalOpen(true);
+              }}
+              onSelectTask={(task) => setSelectedTaskForDetails(task)}
+              onUpdateTaskStatus={handleUpdateTaskStatus}
+              onToggleSubtask={handleToggleSubtask}
+            />
+          )}
+
           {activeScreen === 'employees' && (
             <EmployeesScreen facilities={facilities} />
           )}
@@ -213,6 +287,23 @@ export default function App() {
         onClose={() => setIsCreateTicketModalOpen(false)}
         facilities={facilities}
         onCreateTicket={handleCreateTicket}
+      />
+
+      <CreateTaskModal
+        isOpen={isCreateTaskModalOpen}
+        onClose={() => setIsCreateTaskModalOpen(false)}
+        facilities={facilities}
+        onCreateTask={handleCreateTask}
+        defaultStatus={createTaskDefaultStatus}
+      />
+
+      <TaskDetailsModal
+        isOpen={selectedTaskForDetails !== null}
+        task={selectedTaskForDetails}
+        onClose={() => setSelectedTaskForDetails(null)}
+        onUpdateStatus={handleUpdateTaskStatus}
+        onToggleSubtask={handleToggleSubtask}
+        onDeleteTask={handleDeleteTask}
       />
 
       <TicketDetailsModal

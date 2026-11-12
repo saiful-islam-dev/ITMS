@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { Facility } from '../../types';
 
@@ -56,9 +58,13 @@ export const Topbar: React.FC<TopbarProps> = ({
         <nav className="hidden md:flex items-center gap-space-xs font-body-dense text-body-dense text-on-surface-variant">
           <span className="text-on-surface-variant font-body-dense text-body-dense">IT Operations</span>
           <span className="material-symbols-outlined text-[14px] text-outline-variant">chevron_right</span>
-          <span className="text-on-surface-variant font-body-dense text-body-dense">Overview</span>
+          <span className="text-on-surface-variant font-body-dense text-body-dense">
+            {activeScreenTitle === 'Tasks' || activeScreenTitle === 'Task Management' ? 'Workflow & Maintenance' : 'Overview'}
+          </span>
           <span className="material-symbols-outlined text-[14px] text-outline-variant">chevron_right</span>
-          <span className="text-on-surface font-body-dense-medium text-body-dense-medium">{activeScreenTitle}</span>
+          <span className="text-on-surface font-body-dense-medium text-body-dense-medium">
+            {activeScreenTitle === 'Task Management' ? 'Tasks' : activeScreenTitle}
+          </span>
         </nav>
 
         {/* Facility selector dropdown */}

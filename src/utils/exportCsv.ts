@@ -1,4 +1,52 @@
-import { Facility, ITAsset, SupportTicket } from '../types';
+import { Facility, ITAsset, SupportTicket, TaskItem } from '../types';
+
+export function exportTasksToCsv(tasks: TaskItem[]) {
+  const headers = [
+    'Task Number',
+    'Title',
+    'Domain',
+    'Category',
+    'Status',
+    'Priority',
+    'Facility Name',
+    'Facility Code',
+    'Assignee',
+    'Due Date',
+    'Progress %',
+    'Asset Tag',
+    'Linked Ticket',
+    'Description'
+  ];
+
+  const rows = tasks.map(t => [
+    `"${t.taskNumber}"`,
+    `"${t.title.replace(/"/g, '""')}"`,
+    `"${t.domainTag}"`,
+    `"${t.category}"`,
+    `"${t.status}"`,
+    `"${t.priority}"`,
+    `"${t.facilityName}"`,
+    `"${t.facilityCode}"`,
+    `"${t.assignee.name}"`,
+    `"${t.dueDate || t.completedTime || 'N/A'}"`,
+    `"${t.progressPercent || 0}%"`,
+    `"${t.assetTag || ''}"`,
+    `"${t.linkedTicketNumber || ''}"`,
+    `"${t.description.replace(/"/g, '""')}"`
+  ]);
+
+  const csvContent = [headers.join(','), ...rows.map(r => r.join(','))].join('\n');
+  const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  const timestamp = new Date().toISOString().slice(0, 10);
+  link.setAttribute('href', url);
+  link.setAttribute('download', `ITMS-Task-Management-Export-${timestamp}.csv`);
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  URL.revokeObjectURL(url);
+}
 
 export function exportFacilitiesToCsv(facilities: Facility[]) {
   const headers = [

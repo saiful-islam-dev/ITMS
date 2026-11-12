@@ -148,3 +148,50 @@ export interface SystemSettings {
   autoTicketOnDegraded: boolean;
 }
 
+export type TaskStatus = 'todo' | 'in_progress' | 'review_blocked' | 'done';
+export type TaskPriority = 'critical' | 'high' | 'medium' | 'low';
+export type TaskCategory = 'all' | 'preventative' | 'network' | 'hardware';
+
+export interface TaskSubtask {
+  id: string;
+  title: string;
+  completed: boolean;
+}
+
+export interface TaskAssignee {
+  id: string;
+  name: string;
+  initials: string;
+  avatarColor: string;
+  avatarUrl?: string;
+  specialty?: string;
+}
+
+export interface TaskItem {
+  id: string;
+  taskNumber: string;
+  title: string;
+  description: string;
+  category: 'preventative' | 'network' | 'hardware';
+  domainTag: string;
+  status: TaskStatus;
+  priority: TaskPriority;
+  facilityId: string;
+  facilityCode: string;
+  facilityName: string;
+  facilityShort: string;
+  assignee: TaskAssignee;
+  dueDate?: string;
+  isDueToday?: boolean;
+  progressPercent?: number;
+  subtasks?: TaskSubtask[];
+  assetTag?: string;
+  linkedTicketNumber?: string;
+  timeRemaining?: string;
+  blockReason?: string;
+  reviewNote?: string;
+  completedTime?: string;
+  createdAt?: string;
+}
+
+

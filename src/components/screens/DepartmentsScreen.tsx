@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { Building, Users, HardDrive, DollarSign, ArrowRight, Layers } from 'lucide-react';
 import { Department } from '../../types';

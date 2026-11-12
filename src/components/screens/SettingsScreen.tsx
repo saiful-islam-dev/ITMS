@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { Settings, ShieldCheck, Bell, Server, Save, CheckCircle2, RotateCcw } from 'lucide-react';
 import { SystemSettings } from '../../types';
