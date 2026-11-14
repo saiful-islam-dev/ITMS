@@ -80,11 +80,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
               key={item.label}
               onClick={() => handleNavClick(item.id)}
               title={isCollapsed ? item.label : undefined}
-              className={`w-full flex items-center justify-between px-space-sm py-space-xs transition-colors rounded-lg text-left ${
-                isActive
-                  ? 'bg-primary-container text-on-primary font-body-dense-medium'
-                  : 'text-on-surface-variant font-body-dense text-body-dense hover:bg-surface-container-high hover:text-on-surface'
-              } ${isCollapsed ? 'justify-center px-1' : ''}`}
+              className={`w-full flex items-center justify-between px-space-sm py-space-xs transition-colors rounded-lg text-left ${isActive
+                ? 'bg-primary-container text-on-primary font-body-dense-medium'
+                : 'text-on-surface-variant font-body-dense text-body-dense hover:bg-surface-container-high hover:text-on-surface'
+                } ${isCollapsed ? 'justify-center px-1' : ''}`}
             >
               <div className="flex items-center gap-space-sm">
                 <span className="material-symbols-outlined text-[18px]">{item.icon}</span>
@@ -92,11 +91,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
               </div>
               {!isCollapsed && item.badge && (
                 <span
-                  className={`px-space-xs py-0.5 rounded-lg font-code-mono text-label-compact font-medium ${
-                    isActive
-                      ? 'bg-white/20 text-on-primary'
-                      : 'bg-surface-container text-on-surface-variant'
-                  }`}
+                  className={`px-space-xs py-0.5 rounded-lg font-code-mono text-label-compact font-medium ${isActive
+                    ? 'bg-white/20 text-on-primary'
+                    : 'bg-surface-container text-on-surface-variant'
+                    }`}
                 >
                   {item.badge}
                 </span>
@@ -128,11 +126,23 @@ export const Sidebar: React.FC<SidebarProps> = ({
           {/* Logo & Brand Header */}
           <div className="px-space-md py-space-sm flex items-center justify-between bg-surface-container-lowest border-b border-surface-container">
             <div className="flex items-center gap-space-sm overflow-hidden">
-              <img
-                alt="ITMS Logo"
-                className="h-8 w-auto object-contain shrink-0"
-                src="https://lh3.googleusercontent.com/aida/AEtjO1W5rqfLc6DDuV-E8mb_yecomKChs2Qtn66emzsov0eOJ1d2hMHVODMjHgExVetuskRhau6jaDNELnZxvmzjGqKG5o_H_etBBwhpCDFpVHGqdBdETYpQJvmPr8-AHaLIx_VaiAuMuoFDFGth8SSZSsMNBs4gTU_t_pKq0ulvi3LJqmK-TVTpKEvVdczYgfhF3xnENsjeEN2fAS3Q6k5XCSh5ZvWmKCU9sC-25jBg9HVytbJ7V2JFKUVf79Y"
-              />
+              <div className="w-10 h-10 rounded-xl bg-[#4f46e5] flex items-center justify-center text-white shadow-xs ring-1 ring-indigo-700/20">
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                  />
+                </svg>
+              </div>
+
               {!isCollapsed && (
                 <div className="flex flex-col truncate">
                   <div className="flex items-center gap-space-xs">
@@ -149,6 +159,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 </div>
               )}
             </div>
+
             <button
               onClick={onToggleCollapse}
               className="p-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded-lg transition-colors hidden lg:flex"

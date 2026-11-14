@@ -38,6 +38,14 @@ export const AppShell: React.FC<AppShellProps> = ({ children }) => {
 
   const activeScreen = getActiveScreen();
 
+  const isAuthRoute = ['/login', '/signup', '/register', '/reset-password', '/forgot-password'].some((route) =>
+    pathname?.startsWith(route)
+  );
+
+  if (isAuthRoute) {
+    return <>{children}</>;
+  }
+
   const handleSelectScreen = (screen: ScreenId) => {
     router.push(`/${screen}`);
   };
