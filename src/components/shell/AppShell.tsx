@@ -70,6 +70,8 @@ export const AppShell: React.FC<AppShellProps> = ({ children }) => {
         return 'System Settings';
       case 'reports':
         return 'Reports & Analytics';
+      case 'user-management':
+        return 'User Management';
       default:
         return 'Operations Dashboard';
     }
