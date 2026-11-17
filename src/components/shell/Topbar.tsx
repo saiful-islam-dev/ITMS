@@ -59,7 +59,15 @@ export const Topbar: React.FC<TopbarProps> = ({
           <span className="text-on-surface-variant font-body-dense text-body-dense">IT Operations</span>
           <span className="material-symbols-outlined text-[14px] text-outline-variant">chevron_right</span>
           <span className="text-on-surface-variant font-body-dense text-body-dense">
-            {activeScreenTitle === 'Tasks' || activeScreenTitle === 'Task Management' ? 'Workflow & Maintenance' : 'Overview'}
+            {activeScreenTitle === 'User Management' || activeScreenTitle === 'Reports & Analytics' || activeScreenTitle === 'System Settings'
+              ? 'Administration'
+              : activeScreenTitle === 'Departments' || activeScreenTitle === 'Locations'
+              ? 'Organization'
+              : activeScreenTitle === 'Support Tickets'
+              ? 'Service Desk'
+              : activeScreenTitle === 'Tasks' || activeScreenTitle === 'Task Management'
+              ? 'Workflow & Maintenance'
+              : 'Overview'}
           </span>
           <span className="material-symbols-outlined text-[14px] text-outline-variant">chevron_right</span>
           <span className="text-on-surface font-body-dense-medium text-body-dense-medium">

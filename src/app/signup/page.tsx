@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { PasswordInput } from '../../components/auth/PasswordInput';
 import { PasswordStrengthMeter, evaluatePasswordStrength } from '../../components/auth/PasswordStrengthMeter';
+import { AuthBrandHeader } from '../../components/auth/AuthBrandHeader';
 
 export default function SignupPage() {
   const router = useRouter();
@@ -41,31 +42,10 @@ export default function SignupPage() {
       {/* Main Container */}
       <main className="w-full max-w-2xl mx-auto flex-1 flex flex-col justify-center">
         {/* Brand Header */}
-        <header className="text-center mb-6" data-purpose="brand-header">
-          <div className="inline-flex items-center justify-center space-x-3 mb-3">
-            <div className="w-10 h-10 rounded-xl bg-[#4f46e5] flex items-center justify-center text-white shadow-xs ring-1 ring-indigo-700/20">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                />
-              </svg>
-            </div>
-            <div className="text-left">
-              <div className="flex items-center space-x-2">
-                <span className="text-lg font-bold tracking-tight text-slate-900">ITMS</span>
-                <span className="text-[10px] font-semibold bg-indigo-50 text-[#4f46e5] px-2 py-0.5 rounded border border-indigo-200">
-                  v2.4 Enterprise
-                </span>
-              </div>
-              <p className="text-xs text-slate-500 font-medium">Apex Garments IT Operations</p>
-            </div>
-          </div>
-          <h1 className="text-2xl font-bold tracking-tight text-slate-900">Create Your Account</h1>
-          <p className="text-sm text-slate-500 mt-1">Register to access your organization's IT management platform.</p>
-        </header>
+        <AuthBrandHeader
+          title="Create Your Account"
+          subtitle="Register to access your organization's IT management platform."
+        />
 
         {/* Registration Card */}
         <section className="bg-white rounded-2xl border border-slate-200 shadow-level-2 p-6 sm:p-8" data-purpose="registration-card">

@@ -11,7 +11,8 @@ export type ScreenId =
   | 'employees'
   | 'departments'
   | 'settings'
-  | 'reports';
+  | 'reports'
+  | 'user-management';
 
 interface SidebarProps {
   activeScreen: ScreenId;
@@ -56,7 +57,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
   const adminNav = [
     { id: 'reports' as ScreenId, label: 'Reports & Analytics', icon: 'insights' },
-    { id: 'employees' as ScreenId, label: 'User Management', icon: 'manage_accounts' },
+    { id: 'user-management' as ScreenId, label: 'User Management', icon: 'manage_accounts' },
     { id: 'settings' as ScreenId, label: 'System Settings', icon: 'settings' }
   ];
 
