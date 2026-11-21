@@ -1,4 +1,4 @@
-import { Facility, ITAsset, SupportTicket, TaskItem } from '../types';
+import { Facility, ITAsset, SupportTicket, TaskItem, Employee } from '../types';
 
 /**
  * Universal browser file download helper.
@@ -327,4 +327,45 @@ export function exportTelemetryLogsCsv(facilities: Facility[]) {
 
   const timestamp = new Date().toISOString().slice(0, 10);
   downloadFile(formatCsv(headers, rows), `apex_line_network_telemetry_${timestamp}.csv`);
+}
+
+export function exportEmployeesToCsv(employees: Employee[]) {
+  const headers = [
+    'Employee ID',
+    'Full Name',
+    'Role / Title',
+    'Department',
+    'Facility Name',
+    'Facility Code',
+    'Shift Schedule',
+    'Work Phone',
+    'Official Email',
+    'Account Status',
+    'Is Admin',
+    'Assigned Equipment',
+    'Open IT Tickets',
+    'Technical Certifications',
+    'Operational Specialty'
+  ];
+
+  const rows = employees.map(emp => [
+    emp.employeeId || emp.id,
+    emp.name,
+    emp.role || emp.title,
+    emp.department || 'Operations',
+    emp.facilityName,
+    emp.facilityCode,
+    emp.shift,
+    emp.phone,
+    emp.email,
+    emp.status.toUpperCase(),
+    emp.isAdmin ? 'YES' : 'NO',
+    (emp.linkedAssets || []).join('; '),
+    emp.openTickets ?? 0,
+    emp.certifications.join('; '),
+    emp.specialty
+  ]);
+
+  const timestamp = new Date().toISOString().slice(0, 10);
+  downloadFile(formatCsv(headers, rows), `apex_garments_employee_directory_${timestamp}.csv`);
 }
