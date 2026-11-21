@@ -108,10 +108,15 @@ export interface Employee {
   shift: 'Shift A (06:00 - 14:00)' | 'Shift B (14:00 - 22:00)' | 'Night (22:00 - 06:00)' | 'General (09:00 - 18:00)';
   phone: string;
   email: string;
-  status: 'active' | 'on_call' | 'leave';
+  status: 'active' | 'on_call' | 'leave' | 'suspended' | 'offboarding';
   avatar: string;
   certifications: string[];
   specialty: string;
+  employeeId?: string;
+  department?: string;
+  isAdmin?: boolean;
+  linkedAssets?: string[];
+  openTickets?: number;
 }
 
 export interface Department {
