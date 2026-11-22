@@ -60,7 +60,7 @@ export interface ITAsset {
   assetTag: string;
   serialNumber: string;
   name: string;
-  category: 'Workstation' | 'Laptop' | 'Server' | 'Switch' | 'Access Point' | 'Printer/Scanner' | 'IoT/Terminal';
+  category: 'Workstation' | 'Laptop' | 'Server' | 'Switch' | 'Access Point' | 'Printer/Scanner' | 'IoT/Terminal' | 'Industrial Label Printer' | string;
   facilityId: string;
   facilityCode: string;
   facilityName: string;
@@ -74,6 +74,13 @@ export interface ITAsset {
   purchaseDate: string;
   warrantyExpires: string;
   specNotes?: string;
+  brand?: string;
+  modelRevision?: string;
+  costBdt?: number;
+  vendor?: string;
+  attachedInvoice?: string;
+  tags?: string[];
+  vlanSubnet?: string;
 }
 
 export interface SupportTicket {
