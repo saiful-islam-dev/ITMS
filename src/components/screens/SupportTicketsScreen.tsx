@@ -21,13 +21,15 @@ interface SupportTicketsScreenProps {
   facilities: Facility[];
   onUpdateTicketStatus: (ticketId: string, newStatus: SupportTicket['status']) => void;
   onOpenThermals?: (facility: Facility) => void;
+  onOpenCreateTicket?: () => void;
 }
 
 export const SupportTicketsScreen: React.FC<SupportTicketsScreenProps> = ({
   tickets,
   facilities,
   onUpdateTicketStatus,
-  onOpenThermals
+  onOpenThermals,
+  onOpenCreateTicket
 }) => {
   const [search, setSearch] = useState('');
   const [selectedSeverity, setSelectedSeverity] = useState<string>('all');
@@ -90,9 +92,18 @@ export const SupportTicketsScreen: React.FC<SupportTicketsScreenProps> = ({
         </div>
 
         <div className="flex items-center gap-2">
-          <span className="text-xs font-mono text-[#777587]">
+          <span className="text-xs font-mono text-[#777587] hidden sm:inline">
             Average MTTR: 1.4 Hours
           </span>
+          {onOpenCreateTicket && (
+            <button
+              onClick={onOpenCreateTicket}
+              className="flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-white bg-[#3525cd] hover:bg-[#312e81] rounded-lg shadow-sm transition-all cursor-pointer"
+            >
+              <Plus className="w-4 h-4" />
+              <span>+ Create Ticket</span>
+            </button>
+          )}
         </div>
       </div>
 

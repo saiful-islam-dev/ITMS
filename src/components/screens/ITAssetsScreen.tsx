@@ -19,16 +19,21 @@ import {
 } from 'lucide-react';
 import { ITAsset, Facility } from '../../types';
 import { mockAssets } from '../../data/mockAssets';
+import { RegisterAssetModal } from '../modals/RegisterAssetModal';
 
 interface ITAssetsScreenProps {
   facilities: Facility[];
   onOpenTerminal?: (facility: Facility) => void;
+  onOpenRegisterAsset?: () => void;
 }
 
 export const ITAssetsScreen: React.FC<ITAssetsScreenProps> = ({
   facilities,
-  onOpenTerminal
+  onOpenTerminal,
+  onOpenRegisterAsset
 }) => {
+  const [assets, setAssets] = useState<ITAsset[]>(mockAssets);
+  const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
   const [search, setSearch] = useState('');
   const [selectedCampus, setSelectedCampus] = useState<string>('all');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -42,11 +47,16 @@ export const ITAssetsScreen: React.FC<ITAssetsScreenProps> = ({
     'Switch',
     'Printer/Scanner',
     'IoT/Terminal',
-    'Access Point'
+    'Access Point',
+    'Industrial Label Printer'
   ];
 
+  const handleRegisterAsset = (newAsset: ITAsset) => {
+    setAssets((prev) => [newAsset, ...prev]);
+  };
+
   const filteredAssets = useMemo(() => {
-    return mockAssets.filter((asset) => {
+    return assets.filter((asset) => {
       if (selectedCampus !== 'all' && asset.facilityId !== selectedCampus) {
         return false;
       }
@@ -66,7 +76,7 @@ export const ITAssetsScreen: React.FC<ITAssetsScreenProps> = ({
       }
       return true;
     });
-  }, [selectedCampus, selectedCategory, search]);
+  }, [assets, selectedCampus, selectedCategory, search]);
 
   const handlePing = (id: string) => {
     setPingingAssetId(id);
@@ -102,7 +112,7 @@ export const ITAssetsScreen: React.FC<ITAssetsScreenProps> = ({
               Enterprise IT Asset Inventory
             </h1>
             <span className="px-2 py-0.5 text-[11px] font-mono font-bold bg-[#eaedff] text-[#3525cd] rounded-full border border-[#dae2fd]">
-              864 FLEET UNITS
+              {assets.length} FLEET UNITS
             </span>
           </div>
           <p className="text-xs sm:text-sm text-[#464555] mt-1">
@@ -129,10 +139,18 @@ export const ITAssetsScreen: React.FC<ITAssetsScreenProps> = ({
               link.click();
               URL.revokeObjectURL(url);
             }}
-            className="flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold bg-white hover:bg-slate-50 text-[#131b2e] border border-[#cbd5e1] rounded-lg shadow-level-1 transition-all"
+            className="flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold bg-white hover:bg-slate-50 text-[#131b2e] border border-[#cbd5e1] rounded-lg shadow-level-1 transition-all cursor-pointer"
           >
             <Download className="w-3.5 h-3.5 text-[#5b598c]" />
             <span>Export CSV</span>
+          </button>
+
+          <button
+            onClick={() => setIsRegisterModalOpen(true)}
+            className="flex items-center gap-2 px-3.5 py-2 text-xs font-semibold text-white bg-[#3525cd] hover:bg-[#312e81] rounded-lg shadow-sm transition-all cursor-pointer"
+          >
+            <Plus className="w-4 h-4" />
+            <span>+ Register Asset</span>
           </button>
         </div>
       </div>
@@ -305,6 +323,14 @@ export const ITAssetsScreen: React.FC<ITAssetsScreenProps> = ({
           </table>
         </div>
       </div>
+
+      {/* Register Asset Modal */}
+      <RegisterAssetModal
+        isOpen={isRegisterModalOpen}
+        onClose={() => setIsRegisterModalOpen(false)}
+        facilities={facilities}
+        onRegisterAsset={handleRegisterAsset}
+      />
     </div>
   );
 };
